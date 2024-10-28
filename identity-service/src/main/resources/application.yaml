@@ -1,0 +1,26 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /identity
+
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/swd_finalProject"
+    driverClassName: "com.mysql.cj.jdbc.Driver"
+    username: root
+    password: PcyTt11@
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+outbound:
+  identity:
+    client-id: "17676827402-7cs5mmpi6nf2tmkqbl1h3dpndggt23ra.apps.googleusercontent.com"
+    client-secret: "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"
+    redirect-uri: "http://localhost:3000/authenticate"
+
+jwt:
+  signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
+  valid-duration: 3600 # in second
+  refreshable-duration: 36000 # in seconds
