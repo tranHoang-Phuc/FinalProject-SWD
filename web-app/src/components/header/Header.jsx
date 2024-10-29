@@ -14,6 +14,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { logOut } from "../../services/authenticationService";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -56,6 +58,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Header() {
+  const navigate = useNavigate(); // Khởi tạo navigate
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -191,6 +194,13 @@ export default function Header() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+          <Button
+            color="inherit"
+            onClick={() => navigate("/create-patient")}
+            sx={{ ml: 2 }}
+          >
+            Create Patient
+          </Button>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton
               size="large"
